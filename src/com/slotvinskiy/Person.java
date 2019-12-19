@@ -19,14 +19,14 @@ import java.time.format.DateTimeFormatter;
 
 public class Person {
 
-    private static final DateTimeFormatter FORMATTER =DateTimeFormatter.ofPattern("dd-MM-yyyy");
+    private static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 
     private String firstName;
     private String secondName;
     private String patronymic;
     private LocalDate birthday;
 
-    public Person(String secondName, String firstName,  String patronymic, LocalDate birthday) {
+    public Person(String secondName, String firstName, String patronymic, LocalDate birthday) {
         this.firstName = firstName;
         this.secondName = secondName;
         this.patronymic = patronymic;
@@ -57,15 +57,15 @@ public class Person {
         this.birthday = birthday;
     }
 
-    public String toGetFullName() {
+    public String getFullName() {
         return secondName + " " + firstName + " " + patronymic;
     }
 
-    public String toGetSecondNameAndInitials() {
+    public String getSecondNameAndInitials() {
         return secondName + " " + firstName.charAt(0) + "." + " " + patronymic.charAt(0) + ".";
     }
 
-    public int toGetAgeInYears() {
+    public int getAgeInYears() {
         Period age = Period.between(birthday, LocalDate.now());
         return age.getYears();
     }
